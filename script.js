@@ -40,7 +40,7 @@ contactForm.addEventListener('submit', async (e) => {
         // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
         const response = await emailjs.sendForm(
             'service_h3m54r9',  // Replace with your Service ID
-            'template_ilqhqdh', // Replace with your Template ID
+            'template_0r20u4s', // Replace with your Template ID
             contactForm
         );
         
