@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -35,7 +34,7 @@
 <div class="home-content">
 <h1>Hi, I'm <span>Aayush KC</span></h1>
 <h2>Python Developer &amp; Full Stack Developer</h2>
-<p>I'm a Python full-stack developer who builds full-scale, production-ready web applications. I specialize in creating robust backends, intuitive frontends, and seamless user experiences using modern frameworks. I’m experienced in deploying, managing, and maintaining applications across cloud environments. I enjoy solving complex problems through clean architecture and scalable code. Always learning, always improving—driven by a passion for building real-world solutions.</p>
+<p>I'm a Python full-stack developer who builds full-scale, production-ready web applications. I specialize in creating robust backends, intuitive frontends, and seamless user experiences using modern frameworks. I'm experienced in deploying, managing, and maintaining applications across cloud environments. I enjoy solving complex problems through clean architecture and scalable code. Always learning, always improving—driven by a passion for building real-world solutions.</p>
 <a class="btn" href="#projects">View My Work</a>
 </div>
 </div>
@@ -49,7 +48,7 @@
 <h2 class="section-title">About <span>Me</span></h2>
 <div class="about-content">
 <div class="about-text">
-<p>Hello! I'm a software engineer passionate about building reliable, scalable, and user-focused applications. I enjoy working across the full stack—designing systems, writing clean code, and solving real problems through technology. I’m always learning new tools, improving my craft, and creating projects that turn ideas into reality.</p>
+<p>Hello! I'm a software engineer passionate about building reliable, scalable, and user-focused applications. I enjoy working across the full stack—designing systems, writing clean code, and solving real problems through technology. I'm always learning new tools, improving my craft, and creating projects that turn ideas into reality.</p>
 <p>My goal is to build applications that are both visually appealing and highly functional, providing the best user experience possible.</p>
 </div>
 
@@ -166,20 +165,25 @@
 </div>
 </div>
 </div>
-<form class="contact-form">
+<form class="contact-form" id="contactForm">
 <div class="form-group">
 <label for="name">Full Name</label>
-<input id="name" required="" type="text"/>
+<input id="name" name="name" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="email">Email Address</label>
-<input id="email" required="" type="email"/>
+<input id="email" name="email" required="" type="email"/>
+</div>
+<div class="form-group">
+<label for="subject">Subject</label>
+<input id="subject" name="subject" required="" type="text"/>
 </div>
 <div class="form-group">
 <label for="message">Your Message</label>
-<textarea id="message" required="" rows="5"></textarea>
+<textarea id="message" name="message" required="" rows="5"></textarea>
 </div>
 <button class="btn" type="submit">Send Message</button>
+<div id="formMessage" class="form-message"></div>
 </form>
 </div>
 </div>
@@ -191,16 +195,17 @@
 <a href="https://github.com/aayushkc01/" target="_blank"><i class="fab fa-github"></i></a>
 <a href="https://www.linkedin.com/in/aayush-kc-9970a62b2/" target="_blank">
     <i class="fab fa-linkedin"></i>
-    <a href="Resume.pdf" target="_blank">
-        CV
-    </a>
-    
-    
+</a>
+<a href="Resume.pdf" target="_blank" class="cv-link">
+    CV
 </a>
 </div>
 <p>© 2025 Aayush KC. All rights reserved.</p>
 </div>
 </footer>
+
+<!-- Add EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <script src="script.js"></script></body>
 </html>

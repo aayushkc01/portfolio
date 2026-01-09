@@ -535,4 +535,75 @@
                 font-size: 2rem;
             }
         }
-    
+    /* ===== FORM MESSAGES ===== */
+.form-message {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.form-message.success {
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.form-message.error {
+    background: rgba(255, 50, 50, 0.1);
+    color: #ff5050;
+    border: 1px solid rgba(255, 50, 50, 0.2);
+}
+
+.form-message.info {
+    background: rgba(0, 136, 255, 0.1);
+    color: #0088ff;
+    border: 1px solid rgba(0, 136, 255, 0.2);
+}
+
+/* Add Subject field styling to match existing form */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Add CV link styling in footer */
+.cv-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.cv-link:hover {
+    background: var(--primary);
+    color: var(--dark);
+    transform: translateY(-3px);
+}
+
+/* Fix for EmailJS button spinner */
+.fa-spinner {
+    margin-right: 8px;
+}
+
+/* Disabled button state */
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.btn:disabled:hover {
+    box-shadow: none !important;
+}
