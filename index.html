@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Your Name | Portfolio</title>
+<title>Aayush KC | Senior Software Developer</title>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet"/></head>
 <body>
 <!-- Animated Background -->
@@ -14,9 +16,10 @@
 <div class="shape"></div>
 <div class="shape"></div>
 </div>
+
 <!-- Navigation -->
 <nav>
-<a class="logo" href="#">Portfolio</a>
+<a class="logo" href="#"><span class="logo-bracket">&lt;</span>AKC<span class="logo-bracket">/&gt;</span></a>
 <div class="menu-btn" id="menuBtn">
 <i class="fas fa-bars"></i>
 </div>
@@ -24,118 +27,208 @@
 <a href="#home">Home</a>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
 <a href="#projects">Projects</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
+
 <!-- Home Section -->
 <section class="home" id="home">
 <div class="container">
 <div class="home-content">
+<p class="status-line"><span class="status-dot"></span>Available for new opportunities</p>
 <h1>Hi, I'm <span>Aayush KC</span></h1>
-<h2>Python Developer &amp; Full Stack Developer</h2>
-<p>I'm a Python full-stack developer who builds full-scale, production-ready web applications. I specialize in creating robust backends, intuitive frontends, and seamless user experiences using modern frameworks. I’m experienced in deploying, managing, and maintaining applications across cloud environments. I enjoy solving complex problems through clean architecture and scalable code. Always learning, always improving—driven by a passion for building real-world solutions.</p>
+<h2>Senior Software Developer — Java &amp; Distributed Systems</h2>
+<p>I build scalable, secure backend systems with Java, Spring Boot, and microservices architecture. 6+ years designing cloud-native platforms on AWS, streaming data pipelines with Kafka, and shipping production systems for Capital One, Charles Schwab, and Elevance Health.</p>
+<div class="home-cta">
 <a class="btn" href="#projects">View My Work</a>
+<a class="btn btn-outline" href="AayushKC.pdf" target="_blank">Download Resume</a>
+</div>
+<div class="quick-stats">
+<div class="stat"><span class="stat-num">6+</span><span class="stat-label">Years Experience</span></div>
+<div class="stat"><span class="stat-num">3</span><span class="stat-label">Enterprise Clients</span></div>
+<div class="stat"><span class="stat-num">17</span><span class="stat-label">Java Version Migrated To</span></div>
+</div>
 </div>
 </div>
 <div class="home-image">
 <div class="profile-img"></div>
 </div>
 </section>
+
 <!-- About Section -->
 <section class="about" id="about">
 <div class="container">
 <h2 class="section-title">About <span>Me</span></h2>
 <div class="about-content">
 <div class="about-text">
-<p>Hello! I'm a software engineer passionate about building reliable, scalable, and user-focused applications. I enjoy working across the full stack—designing systems, writing clean code, and solving real problems through technology. I’m always learning new tools, improving my craft, and creating projects that turn ideas into reality.</p>
-<p>My goal is to build applications that are both visually appealing and highly functional, providing the best user experience possible.</p>
+<p>I'm a Senior Software Developer with 6+ years of experience designing and building scalable, secure, high-performance backend systems. My focus is Java, Spring Boot, and microservices architecture — with deep, hands-on work in RESTful API design, cloud infrastructure on AWS, and both SQL and NoSQL database systems.</p>
+<p>Over the past several years I've led the migration of legacy systems to Java 17, architected fault-tolerant Kafka pipelines, and built containerized services orchestrated with Docker and Kubernetes. I care about clean architecture, test-driven development, and writing systems that hold up under real production load.</p>
+<p>Currently a Sr. Software Developer at Capital One, where I work on Java 17 modernization, low-latency tuning, and cloud-native microservices as part of broader AWS migration initiatives.</p>
 </div>
-
-<div class="skills">
+<div class="skills" id="skills">
 <div class="skill-item">
-<h3>Python</h3>
-<div class="skill-bar">
-<div class="skill-level" style="width: 95%"></div>
-</div>
-</div>
-<div class="skill-item">
-<h3>AI/ML</h3>
+<h3>Java / Spring Boot</h3>
 <div class="skill-bar">
 <div class="skill-level" style="width: 98%"></div>
 </div>
 </div>
 <div class="skill-item">
-<h3>JavaScript</h3>
+<h3>AWS &amp; Cloud Architecture</h3>
 <div class="skill-bar">
-<div class="skill-level" style="width: 86%"></div>
+<div class="skill-level" style="width: 92%"></div>
 </div>
 </div>
 <div class="skill-item">
-<h3>Java</h3>
+<h3>Microservices &amp; Kafka</h3>
 <div class="skill-bar">
-<div class="skill-level" style="width: 100%"></div>
+<div class="skill-level" style="width: 95%"></div>
+</div>
+</div>
+<div class="skill-item">
+<h3>Docker / Kubernetes</h3>
+<div class="skill-bar">
+<div class="skill-level" style="width: 90%"></div>
+</div>
+</div>
+<div class="skill-item">
+<h3>SQL / NoSQL Databases</h3>
+<div class="skill-bar">
+<div class="skill-level" style="width: 93%"></div>
+</div>
+</div>
+<div class="skill-item">
+<h3>Angular / React / TypeScript</h3>
+<div class="skill-bar">
+<div class="skill-level" style="width: 85%"></div>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
+
+<!-- Experience Section -->
+<section class="experience" id="experience">
+<div class="container">
+<h2 class="section-title">Work <span>Experience</span></h2>
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<span class="timeline-date">Jun 2024 — Present</span>
+<h3>Sr. Software Developer <span class="company">@ Capital One</span></h3>
+<p>Leading Java 17 modernization across backend systems — sealed classes, pattern matching, and records for cleaner, safer code. Tuning low-latency services with ZGC, building Kafka-based fault-tolerant pipelines, and deploying microservices across AWS (EC2, RDS, S3, DynamoDB) with CloudFormation and Kubernetes.</p>
+<div class="timeline-tags">
+<span>Java 17</span><span>Spring Boot</span><span>Kafka</span><span>AWS</span><span>Kubernetes</span><span>Angular 17</span>
+</div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<span class="timeline-date">Jan 2022 — Jun 2024</span>
+<h3>Full Stack Java Developer <span class="company">@ Charles Schwab</span></h3>
+<p>Designed microservices with Spring Boot and Spring Cloud, built Spring Batch pipelines for automated deadline notifications, and implemented secure REST APIs with Spring Security and OAuth 2.0. Set up Kafka clusters with Confluent Schema Registry for real-time data streaming, and built a production-ready Kubernetes infrastructure on AWS.</p>
+<div class="timeline-tags">
+<span>Spring Cloud</span><span>React</span><span>Kafka</span><span>OAuth 2.0</span><span>Snowflake</span><span>Kubernetes</span>
+</div>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-marker"></div>
+<div class="timeline-content">
+<span class="timeline-date">Nov 2020 — Dec 2021</span>
+<h3>Java Developer <span class="company">@ Elevance Health</span></h3>
+<p>Built RESTful microservices with Spring Boot and Spring MVC, integrated Hibernate and Spring Data JPA for optimized data retrieval, and implemented message-driven architecture with JMS and ActiveMQ. Deployed and managed Kubernetes clusters on GCP, including Cloud Run and Cloud Functions for serverless workloads.</p>
+<div class="timeline-tags">
+<span>Spring MVC</span><span>Hibernate</span><span>GCP</span><span>Kafka</span><span>Kubernetes</span><span>JWT</span>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
 <!-- Projects Section -->
 <section id="projects">
 <div class="container">
-<h2 class="section-title">My <span>Projects</span></h2>
+<h2 class="section-title">Selected <span>Work</span></h2>
+<p class="section-subtitle">A few highlights from production systems I've built and shipped.</p>
 <div class="projects-grid">
+
 <div class="project-card">
 <div class="project-img">
-<i class="fas fa-shopping-cart"></i>
+<i class="fas fa-microchip"></i>
 </div>
 <div class="project-content">
-<h3>E-Commerce Platform</h3>
-<p>A fully responsive e-commerce website with shopping cart, user authentication, and payment integration.</p>
+<h3>Java 17 Modernization &amp; Low-Latency Tuning</h3>
+<p>Led migration of legacy Java 8/11 systems to Java 17 at Capital One, applying sealed types, pattern matching, and text blocks. Tuned application performance using ZGC and Java Flight Recorder for advanced observability.</p>
 <div class="project-tags">
-<span>React</span>
-<span>Node.js</span>
-<span>MongoDB</span>
-<span>Stripe API</span>
-</div>
-<a class="btn" href="#">View Project</a>
+<span>Java 17</span>
+<span>ZGC</span>
+<span>JFR</span>
+<span>Spring Boot</span>
 </div>
 </div>
+</div>
+
 <div class="project-card">
 <div class="project-img">
-<i class="fas fa-tasks"></i>
+<i class="fas fa-diagram-project"></i>
 </div>
 <div class="project-content">
-<h3>Task Management App</h3>
-<p>A productivity application for managing tasks with drag-and-drop functionality, deadlines, and team collaboration.</p>
+<h3>Fault-Tolerant Kafka Streaming Pipelines</h3>
+<p>Architected Kafka producer/consumer pipelines on Kafka-Zookeeper clusters with offset-based reprocessing for fault tolerance. Set up Confluent Schema Registry to manage Protobuf schemas at Charles Schwab.</p>
 <div class="project-tags">
-<span>Vue.js</span>
-<span>Firebase</span>
-<span>SCSS</span>
+<span>Kafka</span>
+<span>Schema Registry</span>
+<span>Zookeeper</span>
+<span>Elasticsearch</span>
 </div>
-<a class="btn" href="#">View Project</a>
 </div>
 </div>
+
 <div class="project-card">
 <div class="project-img">
-<i class="fas fa-robot"></i>
+<i class="fas fa-cloud"></i>
 </div>
 <div class="project-content">
-<h3>AI Chatbot</h3>
-<p>An intelligent chatbot using natural language processing to answer customer queries in real-time.</p>
+<h3>Cloud-Native Microservices on AWS &amp; GCP</h3>
+<p>Designed and deployed containerized microservices across AWS (EC2, RDS, DynamoDB, SQS/SNS) and GCP (Cloud Run, Cloud Functions), with Kubernetes orchestration for high availability and auto-scaling.</p>
 <div class="project-tags">
-<span>Python</span>
-<span>TensorFlow</span>
-<span>React</span>
-<span>WebSocket</span>
-</div>
-<a class="btn" href="#">View Project</a>
+<span>AWS</span>
+<span>GCP</span>
+<span>Docker</span>
+<span>Kubernetes</span>
 </div>
 </div>
+</div>
+
+<div class="project-card">
+<div class="project-img">
+<i class="fas fa-layer-group"></i>
+</div>
+<div class="project-content">
+<h3>Spring Batch Notification Engine</h3>
+<p>Built a Spring Batch job at Charles Schwab to automate employee course deadline notifications — chunk-oriented processing, partitioning, retry/skip logic, and Quartz-based scheduling for reliable, repeatable execution.</p>
+<div class="project-tags">
+<span>Spring Batch</span>
+<span>Quartz</span>
+<span>Multi-threading</span>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
+
 <!-- Contact Section -->
 <section class="contact" id="contact">
 <div class="container">
@@ -160,7 +253,6 @@
 <p>+1 (330) 294-1450</p>
 </div>
 </div>
-
 <div>
 </div>
 </div>
@@ -188,26 +280,24 @@
 </div>
 </div>
 </section>
+
 <!-- Footer -->
 <footer>
 <div class="container">
 <div class="social-links">
 <a href="https://github.com/aayushkc01/" target="_blank"><i class="fab fa-github"></i></a>
 <a href="https://www.linkedin.com/in/aayush-kc-9970a62b2/" target="_blank">
-    <i class="fab fa-linkedin"></i>
-    <a href="Resume.pdf" target="_blank">
-        CV
-    </a>
-    
-    
+<i class="fab fa-linkedin"></i>
+</a>
+<a href="AayushKC.pdf" target="_blank">
+CV
 </a>
 </div>
-<p>© 2025 Aayush KC. All rights reserved.</p>
+<p>© 2026 Aayush KC. All rights reserved.</p>
 </div>
 </footer>
 
 <!-- Add EmailJS SDK -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 <script src="script.js"></script></body>
 </html>
