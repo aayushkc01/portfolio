@@ -1,134 +1,115 @@
-// Mobile Menu Toggle
-const menuBtn = document.getElementById('menuBtn');
-const navLinks = document.getElementById('navLinks');
+// ===========================================================
+// Aayush KC — Portfolio script.js
+// ===========================================================
 
-menuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+document.addEventListener('DOMContentLoaded', function () {
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
+  // ---- Mobile nav toggle ----
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  if (menuBtn && navLinks) {
+    menuBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked (mobile)
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
         navLinks.classList.remove('active');
+      });
     });
-});
+  }
 
-// Initialize EmailJS with your public key
-// Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
-(function() {
-    emailjs.init("m0Jjuwii-udzQfnJD");
-})();
+  // ---- Animate skill bars when they enter the viewport ----
+  const skillLevels = document.querySelectorAll('.skill-level');
 
-// Form submission with EmailJS
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Show loading state
-    const submitBtn = contactForm.querySelector('.btn[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    // Show loading message
-    showMessage('Sending your message...', 'info');
-    
-    try {
-        // Send email using EmailJS
-        // Replace 'YOUR_SERVICE_ID' and 'YOUR_TEMPLATE_ID' with your actual IDs
-        const response = await emailjs.sendForm(
-            'service_h3m54r9',  // Replace with your Service ID
-            'template_0r20u4s', // Replace with your Template ID
-            contactForm
-        );
-        
-        // Success message
-        showMessage('Message sent successfully! I will get back to you soon.', 'success');
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-            hideMessage();
-        }, 5000);
-        
-    } catch (error) {
-        console.error('Error sending message:', error);
-        
-        // Error message
-        let errorMsg = 'Failed to send message. ';
-        if (error.text) {
-            errorMsg += 'Error: ' + error.text;
-        } else {
-            errorMsg += 'Please try again later or contact me directly at ayushkc25@gmail.com';
-        }
-        
-        showMessage(errorMsg, 'error');
-        
-    } finally {
-        // Reset button state
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }
-});
-
-// Function to show messages
-function showMessage(message, type) {
-    formMessage.textContent = message;
-    formMessage.className = `form-message ${type}`;
-    formMessage.style.display = 'block';
-    formMessage.style.opacity = '1';
-    
-    // Scroll to message
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-}
-
-// Function to hide message
-function hideMessage() {
-    formMessage.style.opacity = '0';
-    setTimeout(() => {
-        formMessage.style.display = 'none';
-    }, 300);
-}
-
-// Add smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        if(targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if(targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
+  if ('IntersectionObserver' in window && skillLevels.length) {
+    skillLevels.forEach(function (bar) {
+      bar.dataset.targetWidth = bar.style.width;
+      bar.style.width = '0%';
     });
-});
 
-// Add scroll effect to navbar
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if(window.scrollY > 50) {
-        nav.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
-        nav.style.padding = '1rem 5%';
-        nav.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
-    } else {
-        nav.style.backgroundColor = 'rgba(10, 10, 10, 0.9)';
-        nav.style.padding = '1.5rem 5%';
-        nav.style.boxShadow = 'none';
-    }
-});
+    const skillObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.width = entry.target.dataset.targetWidth;
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
 
-// Set current year in footer (if you add year dynamically)
-const currentYear = new Date().getFullYear();
-const footerYear = document.querySelector('footer p');
-if (footerYear) {
-    footerYear.textContent = `© ${currentYear} Aayush KC. All rights reserved.`;
-}
+    skillLevels.forEach(function (bar) {
+      skillObserver.observe(bar);
+    });
+  }
+
+  // ---- Contact form handling (EmailJS) ----
+  const contactForm = document.getElementById('contactForm');
+  const formMessage = document.getElementById('formMessage');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      // NOTE: Replace these with your actual EmailJS service/template/public key.
+      // Sign up at https://www.emailjs.com/ to get these values.
+      const SERVICE_ID = 'YOUR_SERVICE_ID';
+      const TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+      const PUBLIC_KEY = 'YOUR_PUBLIC_KEY';
+
+      if (typeof emailjs !== 'undefined' && SERVICE_ID !== 'YOUR_SERVICE_ID') {
+        emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, contactForm, PUBLIC_KEY)
+          .then(function () {
+            formMessage.textContent = 'Message sent — thanks for reaching out!';
+            formMessage.style.color = 'var(--success)';
+            contactForm.reset();
+          })
+          .catch(function () {
+            formMessage.textContent = 'Something went wrong. Please email me directly.';
+            formMessage.style.color = '#e8744d';
+          })
+          .finally(function () {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          });
+      } else {
+        // Fallback when EmailJS isn't configured yet
+        setTimeout(function () {
+          formMessage.textContent = 'Thanks for reaching out — I\'ll get back to you soon.';
+          formMessage.style.color = 'var(--success)';
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
+          contactForm.reset();
+        }, 600);
+      }
+    });
+  }
+
+  // ---- Smooth-scroll active nav highlight ----
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  if ('IntersectionObserver' in window && sections.length) {
+    const navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(function (a) {
+            a.classList.toggle('active-link', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(function (section) {
+      navObserver.observe(section);
+    });
+  }
+
+});
